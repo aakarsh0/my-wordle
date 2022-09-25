@@ -36,7 +36,7 @@ const Header: React.FC = () => {
             </svg>
           </button>
         </div>
-        <div className={styles.title}>Practice Wordle</div>
+        <div className={styles.title}>Wordle for Sans</div>
         <div>
           <button className={styles.icon} onClick={resetClickHandler}>
             <svg

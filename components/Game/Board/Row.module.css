@@ -2,8 +2,20 @@
   display: block;
 }
 
-.row {
+.row3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+}
+
+.row5 {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  grid-gap: 5px;
+}
+
+.row10 {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
   grid-gap: 5px;
 }

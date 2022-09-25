@@ -12,20 +12,24 @@ interface GameState {
   boardStyles: Array<string>;
   dictionary: Array<string>;
   targetWord: string;
+  targetWordLength: number;
   lettersAndStyling: LettersInterface;
   animation: string;
   alertMessage: { message: string; duration: number };
 }
 
+let randomWord = targetWords[Math.floor(Math.random() * targetWords.length)];
+
 const initialState: GameState = {
   gameStatus: "IN_PROGRESS",
-  numberOfLetters: 5,
+  dictionary: dictionary,
+  targetWord: randomWord,
+  targetWordLength: randomWord.length,
+  numberOfLetters: randomWord.length,
   numberOfRows: 6,
   currentRow: 0,
   boardState: new Array(6).fill(""),
   boardStyles: new Array(6).fill(""),
-  dictionary: dictionary,
-  targetWord: targetWords[Math.floor(Math.random() * targetWords.length)],
   lettersAndStyling: Letters,
   animation: "",
   alertMessage: { message: "", duration: 1000 },
@@ -74,6 +78,8 @@ const gameSlice = createSlice({
       state.lettersAndStyling = Letters;
       state.targetWord =
         targetWords[Math.floor(Math.random() * targetWords.length)];
+      state.targetWordLength = state.targetWord.length;
+      state.numberOfLetters = state.targetWordLength
       state.alertMessage = { message: "ResetGame", duration: 1000 };
     },
     resetAnimation(state) {
@@ -103,7 +109,7 @@ const gameSlice = createSlice({
       state.gameStatus = "animation";
 
       if (state.boardState[state.currentRow].length === state.numberOfLetters) {
-        if (dictionary.includes(state.boardState[state.currentRow])) {
+        if (dictionary.includes(state.boardState[state.currentRow]) || true) {
           const styles = new Array(state.numberOfLetters).fill("a");
 
           // There are two targets so that the targetPresent don't remove possible further

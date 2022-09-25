@@ -8,8 +8,8 @@ const Home: NextPage = () => {
   return (
     <Fragment>
       <Head>
-        <title>Practice Wordle</title>
-        <meta name="description" content="App to practice wordle game." />
+        <title>Wordle for Sans</title>
+        <meta name="description" content="App for Sans to play Wordle" />
       </Head>
       <Game />
     </Fragment>

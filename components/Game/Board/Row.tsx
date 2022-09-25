@@ -55,7 +55,7 @@ const Row: React.FC<RowProps> = (props) => {
 
   return (
     <div className={styles.container}>
-      <div className={`${styles.row}`}>
+      <div className={`${styles.row5}`}>
         {preparedWordArray.map((letter, index) => {
           return (
             <Letter
