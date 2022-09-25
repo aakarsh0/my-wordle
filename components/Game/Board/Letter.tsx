@@ -8,6 +8,7 @@ interface LetterProps {
   dataState: string;
   animation: string;
   index: number;
+  numberOfLetters:number;
 }
 
 const Letter: React.FC<LetterProps> = (props) => {
@@ -24,7 +25,7 @@ const Letter: React.FC<LetterProps> = (props) => {
       reference.current?.classList.add(styles.flipout);
       return;
     }
-    if (props.index === 4) {
+    if (props.index === props.numberOfLetters-1) {
       dispatch(gameActions.resetAnimation());
     }
     if (reference.current?.classList.contains(styles.flipout)) {

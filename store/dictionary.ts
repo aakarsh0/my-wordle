@@ -2319,13 +2319,15 @@
 
 const targetWords = [
   "sans",
+  "fans",
+  "only",
   // "maleficent",
   "cloud",
   "cats",
   "jerry",
   "paris",
   "ice",
-  "tom"
+  "tom",
 ];
 
 export const dictionary = [

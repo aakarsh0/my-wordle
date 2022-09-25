@@ -161,7 +161,7 @@ const gameSlice = createSlice({
 
           state.boardStyles[state.currentRow] = styles.join("");
 
-          if (state.boardStyles[state.currentRow] === "ccccc") {
+          if (state.boardStyles[state.currentRow] === new Array(state.numberOfLetters + 1).join( "c" )) {
             state.gameStatus = "WIN";
 
             state.alertMessage = {

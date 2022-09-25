@@ -64,6 +64,7 @@ const Row: React.FC<RowProps> = (props) => {
               dataState={evaluateDataState(letter, index)}
               animation={evaluateAnimation(letter)}
               index={index}
+              numberOfLetters={props.numberOfLetters}
             />
           );
         })}
